@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase>
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="6" title="Set Values: result">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">result</value>
+              </namedValue>
+              <namedValue name="value"/>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Match" name="Match" testItemId="7" title="Match:  General Information\\r\\nDate of Event: 6/16/2023\\r\\nTime of Event:=&gt;([0-9]+(/[0-9]+)+)=&gt;abd">
+      <arguments>
+        <argument id="input">
+          <value class="value" valueClass="string"> General Information\\r\\nDate of Event: 6/16/2023\\r\\nTime of Event:</value>
+        </argument>
+        <argument id="regex">
+          <value class="value" valueClass="string">([0-9]+(/[0-9]+)+)</value>
+        </argument>
+        <argument id="caseInsensitive">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">abd</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.messaging.Subscribe" name="Subscribe" testItemId="3" title="Subscribe: ">
+      <arguments>
+        <argument id="sourceConnectionName"/>
+        <argument id="resultName"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

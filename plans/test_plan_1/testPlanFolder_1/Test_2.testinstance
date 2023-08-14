@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testPlanInstance testCasePath="tests/Callable/Convert_Lead.testcase">
+  <planSettings/>
+  <planFeatures/>
+  <associations>
+    <association assocationType="TM.TEST_SUITE_CASE" connectionId="c31db362-b9ca-4c58-b5fb-08b901acf7f1" entityKey="a0o5i000000fWYVAA2"/>
+  </associations>
+</testPlanInstance>

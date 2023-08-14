@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="5">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="18" title="Salesforce Connect: admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">admin</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiConnect" name="UiConnect" testItemId="1" title="UI Connect: OrangeDemo">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">OrangeDemo</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">OrangeDemo</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="privateBrowsingMode"/>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="14" title="On Screen">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">UiConnection</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget"/>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On Screen</value>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">IfNeccessary</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="15"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.list.ListCompare" name="ListCompare" testItemId="5" title="Compare: =&gt;">
+      <arguments>
+        <argument id="list1"/>
+        <argument id="list2"/>
+        <argument id="matchColumns"/>
+        <argument id="compareColumns"/>
+        <argument id="ignoreColumns"/>
+        <argument id="differenceHandling">
+          <value class="value" valueClass="string">Log</value>
+        </argument>
+        <argument id="unmatched1Handling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="unmatched2Handling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="caseInsensitive">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.restservice.RestRequest" name="RestRequest" testItemId="2" title="Web Request (REST): ⇒RestResponse">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">WebServiceConnection</value>
+        </argument>
+        <argument id="targetValue">
+          <value class="restTarget" uri="rest:untyped?bodyStyle=JSON&amp;method=POST"/>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">RestResponse</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="statusResultName">
+          <value class="value" valueClass="string">RestResponseStatus</value>
+        </argument>
+        <argument id="restResourceUrl"/>
+        <argument id="restRequestHeader"/>
+        <argument id="restBody"/>
+        <argument id="restAttachments">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+      </arguments>
+      <generatedParameters>
+        <apiParam group="request" internal="true" name="restResourceUrl" title="Resource URL">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="header" internal="true" name="restRequestHeader" passwordVariableAllowed="true" title="Request Header">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="body" name="restBody" title="Body">
+          <type>
+            <textType>
+              <constraints>
+                <valueConstraint name="mimeType">application/json</valueConstraint>
+              </constraints>
+            </textType>
+          </type>
+        </apiParam>
+        <compoundApiParam group="attachments" list="true" name="restAttachments" title="Attachment">
+          <childParams>
+            <apiParam name="name" title="Attachment Name"/>
+            <apiParam name="fileName" title="File Name"/>
+            <apiParam name="contentType" title="Content Type">
+              <type>
+                <choiceType>
+                  <constraints>
+                    <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                    <valueConstraint name="valuesSourceDependencies">com.provar.core.model.base.api.MimeContentType</valueConstraint>
+                  </constraints>
+                </choiceType>
+              </type>
+            </apiParam>
+            <apiParam name="data" title="Data">
+              <type>
+                <urlType/>
+              </type>
+            </apiParam>
+            <apiParam name="base64Encode" title="Encode As Base64">
+              <type>
+                <booleanType/>
+              </type>
+            </apiParam>
+          </childParams>
+        </compoundApiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Match" name="Match" testItemId="4" title="Match: =&gt;=&gt;">
+      <arguments>
+        <argument id="input"/>
+        <argument id="regex"/>
+        <argument id="caseInsensitive"/>
+        <argument id="resultName"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Match" name="Match" testItemId="6" title="Match: =&gt;=&gt;">
+      <arguments>
+        <argument id="input"/>
+        <argument id="regex"/>
+        <argument id="caseInsensitive"/>
+        <argument id="resultName"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="9" title="UI Assert">
+      <arguments>
+        <argument id="fieldAssertions">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="columnAssertions">
+          <value class="valueList" mutable="Mutable">
+            <uiColumnAssertion/>
+          </value>
+        </argument>
+        <argument id="pageAssertions">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">ad</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="beforeWait"/>
+        <argument id="autoRetry"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="8" title="Assert:  EqualTo ">
+      <arguments>
+        <argument id="expectedValue"/>
+        <argument id="comparisonType">
+          <value class="value" valueClass="string">EqualTo</value>
+        </argument>
+        <argument id="actualValue"/>
+        <argument id="caseSensitive">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="numeric">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="retainDecimals">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="nullGreater">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchMultiLine">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchDotAll">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="failureMessage"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="19" title="SOQL Query: select Name from Account Where =&gt;accountName">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="value" valueClass="string">select Name from Account Where </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">accountName</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="20" title="Assert: {accountName[1].name} EqualTo ui">
+      <arguments>
+        <argument id="expectedValue">
+          <value class="variable">
+            <path element="accountName">
+              <filter class="index">
+                <index valueClass="decimal">0</index>
+              </filter>
+            </path>
+            <path element="name"/>
+          </value>
+        </argument>
+        <argument id="comparisonType">
+          <value class="value" valueClass="string">EqualTo</value>
+        </argument>
+        <argument id="actualValue">
+          <value class="value" valueClass="string">ui</value>
+        </argument>
+        <argument id="caseSensitive">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="numeric">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="retainDecimals">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="nullGreater">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchMultiLine">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchDotAll">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="failureMessage"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.list.ListCompare" name="ListCompare" testItemId="16" title="Compare: {accountName[1].name}=&gt;">
+      <arguments>
+        <argument id="list1">
+          <value class="variable">
+            <path element="accountName">
+              <filter class="index">
+                <index valueClass="decimal">0</index>
+              </filter>
+            </path>
+            <path element="name"/>
+          </value>
+        </argument>
+        <argument id="list2"/>
+        <argument id="matchColumns"/>
+        <argument id="compareColumns"/>
+        <argument id="ignoreColumns"/>
+        <argument id="differenceHandling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="unmatched1Handling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="unmatched2Handling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="caseInsensitive">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Match" name="Match" testItemId="17" title="Match: =&gt;=&gt;">
+      <arguments>
+        <argument id="input"/>
+        <argument id="regex"/>
+        <argument id="caseInsensitive"/>
+        <argument id="resultName"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

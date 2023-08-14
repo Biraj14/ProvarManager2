@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="2">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="1" title="Collection of lists">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Collection of lists</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="actual" variableScope="Test">
+          <cacheToken>C:/Users/biraj.deb/Downloads/listcollect.xlsx;1688978449148</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="Name"/>
+            <apiParam name="Id"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">C:\\Users\\biraj.deb\\Downloads\\listcollect.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">actual</worksheetName>
+            <valuesRange class="value" valueClass="string">A1:B5</valuesRange>
+          </sourceValue>
+        </parameterValueSource>
+        <parameterValueSource variableName="expected" variableScope="Test">
+          <cacheToken>C:/Users/biraj.deb/Downloads/listcollect.xlsx;1688978449148</cacheToken>
+          <cachedParameters>
+            <apiParam name="RowNumber"/>
+            <apiParam name="Name"/>
+            <apiParam name="Id"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">C:\\Users\\biraj.deb\\Downloads\\listcollect.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">expected</worksheetName>
+            <valuesRange class="value" valueClass="string">A1:B5</valuesRange>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+      <clauses>
+        <clause name="hidden" testItemId="2"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.list.ListCompare" isTitleUpdated="true" name="ListCompare" testItemId="3" title="Compare: {actual}=&gt;{expected}Comparing two columns across lists with the same row order">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="list1">
+          <value class="variable">
+            <path element="actual"/>
+          </value>
+        </argument>
+        <argument id="list2">
+          <value class="variable">
+            <path element="expected"/>
+          </value>
+        </argument>
+        <argument id="matchColumns"/>
+        <argument id="compareColumns"/>
+        <argument id="ignoreColumns"/>
+        <argument id="differenceHandling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="unmatched1Handling">
+          <value class="value" valueClass="string">Warn</value>
+        </argument>
+        <argument id="unmatched2Handling">
+          <value class="value" valueClass="string">Warn</value>
+        </argument>
+        <argument id="caseInsensitive">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.list.ListCompare" name="ListCompare" testItemId="4" title="Compare: {actual}=&gt;{expected}">
+      <arguments>
+        <argument id="list1">
+          <value class="variable">
+            <path element="actual"/>
+          </value>
+        </argument>
+        <argument id="list2">
+          <value class="variable">
+            <path element="expected"/>
+          </value>
+        </argument>
+        <argument id="matchColumns"/>
+        <argument id="compareColumns">
+          <value class="value" valueClass="string">Id</value>
+        </argument>
+        <argument id="ignoreColumns"/>
+        <argument id="differenceHandling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="unmatched1Handling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="unmatched2Handling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="caseInsensitive">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="4">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: admin (Test)">
+      <tags/>
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">admin</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">LightningSales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">enable</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Split" name="Split" testItemId="5" title="Split: a,s,d,f,g,h,j,k,l=&gt;,=&gt;Tokens">
+      <arguments>
+        <argument id="input">
+          <value class="value" valueClass="string">a,s,d,f,g,h,j,k,l</value>
+        </argument>
+        <argument id="separator">
+          <value class="value" valueClass="string">,</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Tokens</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="9" title="Set Values: bir">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">bir</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string"> </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="8" title="Set Values: i">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">bir</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="compound">
+                  <parts>
+                    <variable>
+                      <path element="bir"/>
+                    </variable>
+                    <value valueClass="string"> </value>
+                    <variable>
+                      <path element="row"/>
+                    </variable>
+                  </parts>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">i</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">1</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="6" title="For Each: {Tokens}=&gt;var">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="Tokens"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">var</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="7">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.DesignStep" name="DesignStep" testItemId="14" title="Design Step">
+              <arguments>
+                <argument id="name"/>
+                <argument id="description"/>
+                <argument id="expectedResult"/>
+              </arguments>
+              <clauses>
+                <clause name="hidden" testItemId="15"/>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.DoWhile" name="DoWhile" testItemId="10" title="While: {i &lt; 10}">
+      <arguments>
+        <argument id="condition">
+          <value class="lt">
+            <lhs class="variable">
+              <path element="i"/>
+            </lhs>
+            <rhs class="value" valueClass="decimal">10</rhs>
+          </value>
+        </argument>
+        <argument id="counterName">
+          <value class="value" valueClass="string">LoopCounter</value>
+        </argument>
+        <argument id="counterStart">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="counterEnd"/>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="11">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="12" title="Set Values: i">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">i</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="variable">
+                          <path element="LoopCounter"/>
+                        </value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+</testCase>

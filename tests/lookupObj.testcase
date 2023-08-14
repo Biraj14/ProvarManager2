@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="14">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="16" title="Salesforce Connect: admin (Test)">
+      <tags/>
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">admin</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="6" title="Set Values: check.case_title">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">check.case_title</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="value" valueClass="string">huhuhuhh</value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Folder</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="8" title="Set Values: global">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">global</value>
+              </namedValue>
+              <namedValue name="value"/>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="9" title="Set Values: name">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">name</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="variable">
+                  <path element="global"/>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="15" title="Write: {check}=&gt;templates/workbookbiraj.xlsx">
+      <tags/>
+      <arguments>
+        <argument id="data">
+          <value class="variable">
+            <path element="check"/>
+          </value>
+        </argument>
+        <argument id="dataUrl">
+          <value class="excelTarget" sheetWriteMode="Overwrite">
+            <workbookPath class="value" valueClass="string">templates/workbookbiraj.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Sheet1</worksheetName>
+          </value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">templates/workbookbiraj.xlsx</value>
+        </argument>
+      </arguments>
+      <parameterValueSources/>
+      <generatedParameters/>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="13" title="Write: {check}=&gt;templates/workbookbiraj.xlsx">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="data">
+          <value class="variable">
+            <path element="check"/>
+          </value>
+        </argument>
+        <argument id="dataUrl">
+          <value class="excelTarget" sheetWriteMode="Update">
+            <workbookPath class="value" valueClass="string">templates/workbookbiraj.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Sheet1</worksheetName>
+          </value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">templates/workbookbiraj.xlsx</value>
+        </argument>
+        <argument id="updateValueRange">
+          <value class="value" valueClass="string">A2</value>
+        </argument>
+        <argument id="updateColumnNames">
+          <value class="value" valueClass="string">FirstColumnOfRange</value>
+        </argument>
+        <argument id="updateMatchType">
+          <value class="value" valueClass="string">RowOrColNumber</value>
+        </argument>
+        <argument id="updateMatchLocator">
+          <value class="value" valueClass="string">1</value>
+        </argument>
+      </arguments>
+      <generatedParameters>
+        <apiParam group="result" name="updateValueRange" title="Values Range">
+          <summary>The range of cells that needs to updated. If nothing is specified entire sheet is targeted</summary>
+          <type>
+            <textType>
+              <constraints>
+                <valueConstraint name="disableTemplateEditor">true</valueConstraint>
+              </constraints>
+            </textType>
+          </type>
+        </apiParam>
+        <apiParam group="result" name="updateColumnNames" title="Column Names">
+          <summary>Identifies where the column names are in the spreadsheet:</summary>
+          <defaultValue>FirstRowOfRange</defaultValue>
+          <type>
+            <choiceType>
+              <constraints>
+                <valueConstraint name="boundedValues">FirstRowOfRange:Across the first row|FirstColumnOfRange:Down the first column</valueConstraint>
+              </constraints>
+            </choiceType>
+          </type>
+        </apiParam>
+        <apiParam group="result" internal="true" name="updateMatchType" title="">
+          <summary/>
+          <defaultValue>RowOrColNumber</defaultValue>
+          <type>
+            <choiceType>
+              <constraints>
+                <valueConstraint name="boundedValues">RowOrColNumber:Match by Position|Where:Match on Condition|MatchColumns:Match by Columns</valueConstraint>
+              </constraints>
+            </choiceType>
+          </type>
+        </apiParam>
+        <apiParam group="result" manuallyResolved="true" name="updateMatchLocator" title="Match Locator">
+          <summary>Identifies which rows in the Range will be updated. \n It can either be a row number (where the first row = 1) or a filtering condition against one or more columns (e.g. {firstName = "Joe" and surname = "Bloggs"}.</summary>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexUpdateObject" name="ApexUpdateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand" testItemId="17" title="Update Object: Account = ">
+      <tags/>
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Account</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">AccountUpdated</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">admin</value>
+        </argument>
+        <argument id="objectId"/>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="Account2__c"/>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand.ConnectionName">admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.UpdateCustomObjectTestStepCommand.CustomObjectName">Account</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Account&amp;field=Account2__c" name="Account2__c" title="Account2__c"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+</testCase>

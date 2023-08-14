@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="8">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1" title="Set Values: {}">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="SourceData" variableScope="Test">
+          <cacheToken>C:/Users/biraj.deb/Provar/Assignment/Assignment/templates/workbookbiraj.xlsx;1690977597100</cacheToken>
+          <sourceValue class="excelTarget" debug="true" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">templates/workbookbiraj.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Sheet1</worksheetName>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="3" title="Set Values: aasd">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">aasd</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="variable">
+                  <path element="SourceData"/>
+                  <path element="case_title"/>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>
